@@ -1,0 +1,53 @@
+Due date: Sunday 2/15/2015 @11:59pm
+
+Objective: Learn how to count cycles and improve performance
+
+Assignment: 
+
+You're given an inefficient multi-cycle implementation of our CPU. Your job
+is it make it run in less cycles.
+
+My implementation is embarrassingly slow and you have plenty of room for
+improvement.
+
+One change from p2 is that both our memory and register file are registered;
+they capture their inputs in flip-flops, process them for a cycles, then
+produce their outputs in flip-flops.
+
+- instruction set
+
+    encoding              instruction             description
+    
+0    0000iiiiiiiitttt      mov i,t                 regs[t] = i; pc += 1;
+1    0001aaaabbbbtttt      add a,b,t               regs[t] = regs[a] + regs[b]; pc += 1;
+2    0010jjjjjjjjjjjj      jmp j                   pc = j;
+4    0011iiiiiiiitttt      ld i,t                  regs[t] = mem[i]; pc += 1;
+3    0100000000000000      halt                    <stop fetching instructions>
+
+Files you can change
+~~~~~~~~~~~~~~~~~~~~
+
+cpu.v contains the implementation. You are required to use the provided
+memory (mem.v), register file (regs.v), and clock (clock.v)
+
+Files to leave alone
+~~~~~~~~~~~~~~~~~~~~
+
+Makefile, clock.v, mem.v, regs.v, counter.v, test.ok, mem.hex
+
+To compile
+~~~~~~~~~~
+
+    make
+
+To run
+~~~~~~
+
+    make run
+
+Will also produce cpu.vcd which can be viewed in gtkwave
+
+To test
+~~~~~~~
+
+    make test

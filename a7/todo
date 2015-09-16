@@ -1,0 +1,26 @@
+ cache implementation:
+ LRU cache
+    cache has tag indicating when a line was last used
+    when need to store something in line
+        replace item with the LRU tag -> oldest tag
+
+    whenever item inserted into cache line update tag of updated
+       this is the PC
+    whenever item has cache line hit, reset flag
+ 
+ 
+ 
+
+
+ have cache store when it first loads -> initial PC
+ assign tag when item placed in cache
+    before placing things in cache, see if line valid and if tag matches
+ have flag or condition when cache full
+ determine whether hit occurs
+ have updated value set when line is hit 
+ do search for oldest item when cache is full, no hits
+     when item retrieved from memory, place it in cache
+
+
+ valid tag, last updated, tag, data
+ 

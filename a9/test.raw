@@ -1,0 +1,212 @@
+WARNING: mem.v:34: $readmemh: Standard inconsistency, following 1364-2005.
+WARNING: mem.v:34: $readmemh(mem.hex): Not enough words in the file for the requested range [0:1023].
+VCD info: dumpfile cpu.vcd opened for output.
+VCD warning: array word main.regs[0] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[0] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[0] will conflict with an escaped identifier.
+VCD warning: array word main.regs[1] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[1] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[1] will conflict with an escaped identifier.
+VCD warning: array word main.regs[2] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[2] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[2] will conflict with an escaped identifier.
+VCD warning: array word main.regs[3] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[3] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[3] will conflict with an escaped identifier.
+VCD warning: array word main.regs[4] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[4] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[4] will conflict with an escaped identifier.
+VCD warning: array word main.regs[5] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[5] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[5] will conflict with an escaped identifier.
+VCD warning: array word main.regs[6] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[6] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[6] will conflict with an escaped identifier.
+VCD warning: array word main.regs[7] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[7] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[7] will conflict with an escaped identifier.
+VCD warning: array word main.regs[8] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[8] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[8] will conflict with an escaped identifier.
+VCD warning: array word main.regs[9] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[9] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[9] will conflict with an escaped identifier.
+VCD warning: array word main.regs[10] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[10] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[10] will conflict with an escaped identifier.
+VCD warning: array word main.regs[11] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[11] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[11] will conflict with an escaped identifier.
+VCD warning: array word main.regs[12] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[12] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[12] will conflict with an escaped identifier.
+VCD warning: array word main.regs[13] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[13] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[13] will conflict with an escaped identifier.
+VCD warning: array word main.regs[14] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[14] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[14] will conflict with an escaped identifier.
+VCD warning: array word main.regs[15] will conflict with an escaped identifier.
+VCD warning: array word main.regs_src[15] will conflict with an escaped identifier.
+VCD warning: array word main.regs_busy[15] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov0[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov1[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov2[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov3[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_add0[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_add1[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_add2[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_add3[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld0[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld1[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld2[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld3[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr0[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr1[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr2[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr3[0] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov0[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov1[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov2[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov3[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_add0[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_add1[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_add2[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_add3[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld0[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld1[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld2[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld3[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr0[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr1[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr2[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr3[1] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov0[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov1[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov2[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov3[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_add0[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_add1[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_add2[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_add3[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld0[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld1[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld2[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld3[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr0[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr1[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr2[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr3[2] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov0[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov1[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov2[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov3[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_add0[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_add1[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_add2[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_add3[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld0[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld1[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld2[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld3[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr0[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr1[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr2[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr3[3] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov0[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov1[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov2[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov3[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_add0[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_add1[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_add2[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_add3[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld0[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld1[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld2[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld3[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr0[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr1[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr2[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr3[4] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov0[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov1[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov2[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov3[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_add0[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_add1[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_add2[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_add3[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld0[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld1[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld2[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld3[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr0[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr1[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr2[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr3[5] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov0[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov1[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov2[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov3[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_add0[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_add1[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_add2[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_add3[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld0[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld1[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld2[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld3[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr0[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr1[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr2[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr3[6] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov0[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov1[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov2[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov3[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_add0[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_add1[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_add2[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_add3[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld0[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld1[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld2[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld3[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr0[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr1[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr2[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr3[7] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov0[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov1[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov2[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_mov3[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_add0[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_add1[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_add2[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_add3[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld0[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld1[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld2[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_ld3[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr0[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr1[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr2[8] will conflict with an escaped identifier.
+VCD warning: array word main.r_ldr3[8] will conflict with an escaped identifier.
+#0:0000
+#1:xxxx
+#2:xxxx
+#3:xxxx
+#4:xxxx
+#5:xxxx
+#6:xxxx
+#7:xxxx
+#8:xxxx
+#9:xxxx
+#10:xxxx
+#11:xxxx
+#12:xxxx
+#13:xxxx
+#14:xxxx
+#15:xxxx
+@   59 cycles	0 instrs	CPI=inf

@@ -1,0 +1,75 @@
+test1 ... pass @  160 cycles	18 instrs	CPI=8.888889
+test2 ... pass @   67 cycles	8 instrs	CPI=8.375000
+test3 ... pass @   38 cycles	0 instrs	CPI=inf
+test4 ... pass @  108 cycles	0 instrs	CPI=inf
+test5 ... pass @  212 cycles	33 instrs	CPI=6.424242
+test6 ... pass @   64 cycles	3 instrs	CPI=21.333333
+test7 ... pass @  113 cycles	9 instrs	CPI=12.555556
+test8 ... pass @   25 cycles	2 instrs	CPI=12.500000
+test9 ... pass @  696 cycles	303 instrs	CPI=2.297030
+testa ... pass @   42 cycles	2 instrs	CPI=21.000000
+testb ... pass @   95 cycles	14 instrs	CPI=6.785714
+testc ... pass @  175 cycles	16 instrs	CPI=10.937500
+testd ... pass @   26 cycles	0 instrs	CPI=inf
+teste ... pass @   27 cycles	0 instrs	CPI=inf
+testf ... pass @   27 cycles	0 instrs	CPI=inf
+testg ... pass @   18 cycles	0 instrs	CPI=inf
+testh ... pass @   18 cycles	0 instrs	CPI=inf
+testi ... fail
+
+
+----------- expected ----------
+#reg[ 0] <= 0x0000
+#reg[ 1] <= 0x0011
+#reg[ 2] <= 0x0022
+#reg[ 3] <= 0x0033
+#reg[ 4] <= 0x0044
+#reg[ 5] <= 0x0055
+#reg[ 6] <= 0x0066
+#reg[ 7] <= 0x0077
+#mem[0080] <= 0000
+#reg[ 8] <= 0x0000
+#mem[0080] <= 0011
+#reg[ 9] <= 0x0011
+#mem[0080] <= 0022
+#reg[10] <= 0x0022
+#mem[0080] <= 0033
+#reg[11] <= 0x0033
+#mem[0080] <= 0044
+#reg[12] <= 0x0044
+#mem[0080] <= 0055
+#reg[13] <= 0x0055
+#mem[0080] <= 0066
+#reg[14] <= 0x0066
+#mem[0080] <= 0077
+#reg[15] <= 0x0077
+
+
+------------- found ----------
+#reg[ 0] <= 0x0000
+#reg[ 1] <= 0x0011
+#reg[ 2] <= 0x0022
+#reg[ 3] <= 0x0033
+#reg[ 4] <= 0x0044
+#reg[ 5] <= 0x0055
+#reg[ 6] <= 0x0066
+#reg[ 7] <= 0x0077
+#mem[0080] <= 0000
+#reg[ 8] <= 0x0000
+#mem[0080] <= 0011
+#reg[ 9] <= 0x0011
+#mem[0080] <= 0022
+#mem[0080] <= 0033
+#reg[10] <= 0x0022
+#reg[11] <= 0x0033
+#mem[0080] <= 0044
+#mem[0080] <= 0055
+#reg[12] <= 0x0044
+#reg[13] <= 0x0055
+#mem[0080] <= 0066
+#mem[0080] <= 0077
+#reg[14] <= 0x0066
+#reg[15] <= 0x0077
+testj ... pass @   22 cycles	1 instrs	CPI=22.000000
+testk ... pass @   19 cycles	0 instrs	CPI=inf
+testl ... pass @  483 cycles	33 instrs	CPI=14.636364

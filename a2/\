@@ -1,0 +1,109 @@
+`timescale 1ps/1ps
+module main();
+ 
+    initial begin
+        $dumpfile("cpu.vcd");
+        $dumpvars(1,main);
+    end
+
+    // clock
+    wire clk;
+    clock c0(clk);
+
+    // PC
+    reg [15:0]pc = 16'h0000;
+
+    // fetch 
+    wire [15:0]memOut;
+    wire [15:0]memIn;
+    mem m0(memIn,memOut);
+  
+    assign memIn = pc;
+   
+    //define opcode
+    reg [15:0] opcode; // = memIn[15:12];
+
+    wire [3:0] ra; // = 4'hx;
+    wire [15:0] va;
+
+    wire [3:0] rb; // = 4'hx;
+    wire [15:0] vb;
+
+    wire writeReg; //= 1'bx;
+    wire [3:0] rt; // = 4'hx;
+    wire [15:0] res; // = 16'hxxxx;
+
+    // registers
+    regs rf(clk,
+        ra, va,
+        rb, vb, 
+        writeReg, rt, res);
+
+    
+   //-----------------------------
+   reg [3:0] reg1; //= 4'hx;
+   assign ra = reg1;
+
+   reg [3:0] reg2;// = 4'hx;
+   assign rb = reg2;
+
+    reg write_enabled;// = 1'bx;
+    assign writeReg = write_enabled;
+
+    reg [3:0] write_location;// = 4'hx;
+    assign rt= write_location;
+
+    reg [15:0] write_data;// = 16'hxxxx;
+    assign res = write_data;
+    //-------------------------------------
+
+
+   reg[15:0] out1;
+   reg[15:0] out2;
+    
+    always @(posedge clk) begin
+        
+        if(pc==9) $finish;
+        opcode = memOut[15:12];
+
+       ///move
+        if(opcode==0) begin
+           write_location = memOut[3:0];
+           write_enabled <=1;
+           write_data <= memOut[11:4];
+         
+         $display("\nmemOut %x, memIn %x, writeReg %x,  ra %x, va %x, rb %x, vb %x, rt %x, res %x, pc %x", memOut, memIn, writeReg, ra, va ,rb, vb, rt, res, pc);
+         $display("opcode %x", opcode);
+        end
+
+        //load
+        if(opcode == 4) begin
+          write_enabled <= 1;
+          write_location <= memOut[3:0];
+          write_data <= memOut[15:0]; 
+          $display("\nmemOut %x, memIn %x, writeReg %x,  ra %x, va %x, rb %x, vb %x, rt %x, res %x, pc %x", memOut, memIn, writeReg, ra, va ,rb, vb, rt, res, pc);
+         $display("opcode %x", opcode);
+           
+        end
+      
+      /* 
+       //add 
+       if(opcode == 1) begin
+            write_enabled <= 1;
+            reg1 = memOut[11:8];
+            reg2 = memOut[7:4];
+            write_location = memOut[3:0]; 
+            write_data = va + vb;
+            $display("\nmemOut %x, memIn %x, writeReg %x,  ra %x, va %x, rb %x, vb %x, rt %x, res %x, pc %x", memOut, memIn, writeReg, ra, va ,rb, vb, rt, res, pc);
+         $display("opcode %x", opcode);     
+         end
+        */    
+        if(opcode!=0) begin
+            write_enabled <=0;
+        end
+
+        pc <= pc+1;
+       //end
+    end
+
+endmodule

@@ -1,0 +1,7 @@
+VCD info: dumpfile cpu.vcd opened for output.
+#reg[ 0] <= 0x0000
+#reg[ 1] <= 0x4011
+#reg[ 2] <= 0x0002
+#reg[ 3] <= 0x4011
+#reg[ 4] <= 0x0004
+#reg[ 2] <= 0x4013

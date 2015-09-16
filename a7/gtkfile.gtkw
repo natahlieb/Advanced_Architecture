@@ -1,0 +1,119 @@
+[*]
+[*] GTKWave Analyzer v3.3.58 (w)1999-2014 BSI
+[*] Mon Apr  6 04:08:00 2015
+[*]
+[dumpfile] "/home/natahlie/Documents/spring2015/cs350c/a7/cpu.vcd"
+[dumpfile_mtime] "Mon Apr  6 04:07:49 2015"
+[dumpfile_size] 61763584
+[savefile] "/home/natahlie/Documents/spring2015/cs350c/a7/gtkfile.gtkw"
+[timestart] 2331010
+[size] 1920 1056
+[pos] -1 -1
+*-13.000000 2360950 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] main.
+[sst_width] 223
+[signals_width] 235
+[sst_expanded] 1
+[sst_vpaned_height] 386
+@24
+main.clk
+main.cycle
+main.pc[15:0]
+main.memIn[15:0]
+main.memOut[15:0]
+main.memReady
+@22
+main.inst[15:0]
+@28
+main.i0.readEnable
+@200
+-
+-
+@24
+main.state[3:0]
+main.opcode[3:0]
+@200
+-
+-
+-
+@22
+main.cache_hit[15:0]
+main.cache_addr[15:0]
+@200
+-
+-
+@22
+main.\cache_i0[0][15:0]
+main.\cache_i0[1][15:0]
+main.\cache_i0[2][15:0]
+@200
+-
+@22
+main.\cache_i1[0][15:0]
+main.\cache_i1[1][15:0]
+main.\cache_i1[2][15:0]
+@200
+-
+@22
+main.\cache_i2[0][15:0]
+main.\cache_i2[1][15:0]
+main.\cache_i2[2][15:0]
+@200
+-
+@22
+main.\cache_i3[0][15:0]
+main.\cache_i3[1][15:0]
+main.\cache_i3[2][15:0]
+@200
+-
+-
+@22
+main.i_cache_hit[15:0]
+main.i_write_location[15:0]
+@23
+main.r_from_cache[15:0]
+@200
+-
+-
+-
+@24
+main.\cache_l0[0][15:0]
+main.\cache_l0[1][15:0]
+main.\cache_l0[2][15:0]
+main.\cache_l0[3][15:0]
+@200
+-
+-
+@24
+main.\cache_l1[0][15:0]
+main.\cache_l1[1][15:0]
+main.\cache_l1[2][15:0]
+main.\cache_l1[3][15:0]
+@200
+-
+-
+@24
+main.\cache_l2[0][15:0]
+main.\cache_l2[1][15:0]
+main.\cache_l2[2][15:0]
+main.\cache_l2[3][15:0]
+main.\cache_l3[0][15:0]
+@200
+-
+-
+@24
+main.\cache_l3[0][15:0]
+main.\cache_l3[1][15:0]
+main.\cache_l3[2][15:0]
+main.\cache_l3[3][15:0]
+@200
+-
+@24
+main.ra[3:0]
+main.va[15:0]
+main.rb[3:0]
+main.vb[15:0]
+main.res[15:0]
+main.rt[3:0]
+[pattern_trace] 1
+[pattern_trace] 0

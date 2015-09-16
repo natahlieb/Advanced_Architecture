@@ -1,0 +1,21 @@
+VCD info: dumpfile cpu.vcd opened for output.
+cycle=    0, pc=0000, inst=0000, regs=xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=    1, pc=0001, inst=0011, regs=0000:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=    2, pc=0002, inst=0022, regs=0000:0001:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=    3, pc=0003, inst=0033, regs=0000:0001:0002:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=    4, pc=0004, inst=0044, regs=0000:0001:0002:0003:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=    5, pc=0005, inst=1122, regs=0000:0001:0002:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=    6, pc=0006, inst=2005, regs=0000:0001:0003:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=    7, pc=0005, inst=1122, regs=0000:0001:0003:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=    8, pc=0006, inst=2005, regs=0000:0001:0004:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=    9, pc=0005, inst=1122, regs=0000:0001:0004:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=   10, pc=0006, inst=2005, regs=0000:0001:0005:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=   11, pc=0005, inst=1122, regs=0000:0001:0005:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=   12, pc=0006, inst=2005, regs=0000:0001:0006:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=   13, pc=0005, inst=1122, regs=0000:0001:0006:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=   14, pc=0006, inst=2005, regs=0000:0001:0007:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=   15, pc=0005, inst=1122, regs=0000:0001:0007:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=   16, pc=0006, inst=2005, regs=0000:0001:0008:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=   17, pc=0005, inst=1122, regs=0000:0001:0008:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=   18, pc=0006, inst=2005, regs=0000:0001:0009:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+cycle=   19, pc=0005, inst=1122, regs=0000:0001:0009:0003:0004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx

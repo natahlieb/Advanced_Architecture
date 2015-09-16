@@ -1,0 +1,304 @@
+mescale 1ps/1ps
+
+//
+// A simple pipelined implementation of p4
+//
+// It has six stages: F, D, R, X, L, W
+//
+// There is a feedback network that allows any stage
+// to flush the pipeline by setting
+//
+//    x_flush = 1
+//    x_target = where to start fetching from
+//
+// Later stages have precedence over eariler stages.
+//
+// Three stages generate their own flush signals in the current implementation:
+//
+//    D for jmp instructions
+//    X for jeq instructions
+//    W for halt instructions
+//
+// Stalling is implemented using a per register counter. The counter
+// gets set to the number of cycles to stall in order to find the correct
+// value in the register.
+//
+// We only stall for RAW dependencies
+//
+// No forwarding, no prediction
+
+module main();
+
+    initial begin
+        $dumpfile("cpu.vcd");
+        $dumpvars(1,main);
+    end
+
+    // clock
+    wire clk;
+    clock c0(clk);
+    
+    counter ctr(W_halt,clk,W_v | D_isJump | R_flush,);
+    
+    // Functions generate combinational logic
+    
+    function [3:0]RA;
+        input [15:0]inst;
+        RA = inst[11:8];
+    endfunction
+    
+    function [3:0]RB;
+      input [15:0]inst;
+      RB = inst[7:4];
+    endfunction
+    
+    function [3:0]RT;
+     input [15:0]inst;
+      RT = inst[3:0];
+    endfunction
+ 
+    function isMov;
+       input v;
+       input [15:0]inst;
+       isMov = v & (inst[15:12] == 0);
+    endfunction
+    
+    function isAdd;
+        input v;
+        input [15:0]inst;
+        isAdd = v & (inst[15:12] == 1);
+    endfunction
+    
+    function isJmp;
+        input v;
+        input [15:0]inst;
+        isJmp = v & (inst[15:12] == 2);
+    endfunction
+    
+    function isHalt;
+        input v;
+        input [15:0]inst;
+        isHalt = v & (inst[15:12] == 3);
+    endfunction
+    
+    function isLd;
+        input v;
+        input [15:0]inst;
+        isLd = v & (inst[15:12] == 4);
+    endfunction
+    
+    function isLdr;
+        input v;
+        input [15:0]inst;
+        isLdr = v & (inst[15:12] == 5);
+    endfunction
+    
+    function isJeq;
+        input v;
+        input [15:0]inst;
+        isJeq = v & (inst[15:12] == 6);
+    endfunction
+    
+    function usesRA;
+        input v;
+        input [15:0]inst;
+        usesRA = isAdd(v,inst) | isLdr(v,inst) | isJeq(v,inst);
+    endfunction
+    
+    function usesRB;
+        input v;
+        input [15:0]inst;
+        usesRB = isAdd(v,inst) | isLdr(v,inst) | isJeq(v,inst);
+    endfunction
+    
+    function usesRT;
+        input v;
+        input [15:0]inst;
+        usesRT = isAdd(v,inst) | isLd(v,inst) | isLdr(v,inst) | isMov(v,inst);
+    endfunction
+    
+    // Compute the per-register stall counter
+    function[3:0]count;
+        input [3:0]index;
+        count = ((~D_stall) & ~(D_flush) & usesRT(D_v,D_inst) & (RT(D_inst) == index)) ? 4 :
+                (counters[index] == 0) ? 0 : (counters[index] -1);
+    endfunction
+    
+    // An array of per register counters, each representing the number
+    // of cycles remaining until the register is ready
+    reg [3:0]counters[0:15];
+    
+    initial begin
+    end
+    
+    // next PC value
+    wire [15:0]nextPC = D_flush ? D_target :
+                        D_stall ? F_pc :
+                        F_v ? (F_pc + 1) :
+                        0;
+    
+    // memory output
+    wire [15:0]memOut;
+    
+    ///////////
+    // Fetch //
+    ///////////
+    
+    reg F_v = 0;                     // Do we have a valid instruction
+    reg [15:0] F_pc;                 // PC
+    
+    ////////////
+    // Decode //
+    ////////////
+    
+    reg D_v = 0;
+    reg [15:0] D_pc;
+    
+    // The decode stage implements stalling by feeding its state
+    // back to itself and forcing the fetch stage to do the same
+    // We save the instruction read from memory in the D_savedInst
+    // register and use it in the following cycle instead of loading
+    // it from memory again
+    
+    reg [15:0] D_savedInst;       // saved instruction
+    reg D_useSaved = 0;           // 1 if using stalled instruction
+    wire [15:0] D_inst = D_useSaved ? D_savedInst : memOut;
+    
+    
+    // Do we have a jump instruction?
+    wire D_isJump = isJmp(D_v,D_inst);
+    
+    // Do we need to flush the pipeline? We give the later stages
+    // priority over us
+    wire D_flush = R_flush | D_isJump;
+    wire [15:0]D_target = R_flush ? R_target :
+                          D_isJump ? D_inst[11:0] :
+                          16'hxxxx;
+    
+    // Do we need to stall
+    wire D_stall = (usesRA(D_v,D_inst) & (counters[RA(D_inst)] != 0)) |
+                   (usesRB(D_v,D_inst) & (counters[RB(D_inst)] != 0));
+    
+    ///////////////
+    // Registers //
+    ///////////////
+    
+    reg R_v = 0;
+    reg [15:0]R_pc;
+    reg [15:0]R_inst;
+    wire R_flush = X_flush;
+    wire [15:0]R_target = X_target;
+    
+    /////////////
+    // eXecute //
+    /////////////
+    
+    reg X_v = 0;
+    reg [15:0]X_pc;
+    reg [15:0]X_inst;
+    wire [15:0]X_va;
+    wire [15:0]X_vb;
+    // Compute the result
+    wire [15:0]X_res = (isAdd(X_v,X_inst) | isLdr(X_v,X_inst)) ? X_va + X_vb :
+                       (isMov(X_v,X_inst) | isLd(X_v,X_inst)) ? X_inst[11:4] :
+                       16'hxxxx;
+    // Do we need to flush the pipeline?
+    //    if later stages want to, we let them do it
+    //    if we have a taken jeq, we do it
+    wire X_flush = L_flush | (isJeq(X_v,X_inst) & (X_va == X_vb));
+    wire [15:0]X_target = L_flush ? L_target : (X_pc + X_inst[3:0]);
+    
+    //////////
+    // Load //
+    //////////
+    
+    reg L_v = 0;
+    reg [15:0]L_pc;
+    reg [15:0]L_inst;
+    reg [15:0]L_res;
+    wire L_flush = W_flush;
+    wire [15:0]L_target = W_target;
+    
+    ////////////////
+    // Write-back //
+    ////////////////
+    
+    reg W_v = 0;
+    reg [15:0]W_pc;
+    reg [15:0]W_inst;
+    wire [15:0]W_memout;
+    reg [15:0]W_res;
+    // The output comes from either memory or the X result depending
+    // on the instruction
+    wire [15:0]W_output = (isLd(W_v,W_inst) | isLdr(W_v,W_inst)) ?  W_memout :
+                          W_res;
+    wire W_halt = isHalt(W_v,W_inst);
+    // Flush the pipeline if we have a halt
+    wire [15:0]W_target = W_pc;
+    wire W_flush = W_halt;
+    
+    // Sequential logic, update all flip-flops
+    always @(posedge clk) begin
+        F_v <= 1;
+        F_pc <= nextPC;
+        
+        D_v <= D_flush ? 0 : (F_v  | D_stall);
+               D_pc <= D_stall ? D_pc : F_pc;
+        D_useSaved <= D_stall;
+        D_savedInst <= D_inst;
+        
+        R_v <= D_v & (~D_flush) & (~D_stall);
+        R_pc <= D_pc;
+        R_inst <= D_inst;
+        
+        X_v <= R_v & (~R_flush);
+        X_pc <= R_pc;
+        X_inst <= R_inst;
+        
+        L_v <= X_v & (~X_flush);
+        L_pc <= X_pc;
+        L_inst <= X_inst;
+        L_res <= X_res;
+        
+        W_v <= L_v & (~L_flush);
+        W_pc <= L_pc;
+        W_inst <= L_inst;
+        W_res <= L_res;
+        
+        // counters
+        if (F_v) begin
+        counters[0] <= count(0);
+        counters[1] <= count(1);
+        counters[2] <= count(2);
+        counters[3] <= count(3);
+        counters[4] <= count(4);
+        counters[5] <= count(5);
+        counters[6] <= count(6);
+        counters[7] <= count(7);
+        counters[8] <= count(8);
+        counters[9] <= count(9);
+        counters[10] <= count(10);
+        counters[11] <= count(11);
+        counters[12] <= count(12);
+        counters[13] <= count(13);
+        counters[14] <= count(14);
+        counters[15] <= count(15);
+        end else begin
+        counters[0] <= 0;
+        counters[1] <= 0;
+        counters[2] <= 0;
+        counters[3] <= 0;
+        counters[4] <= 0;
+        counters[5] <= 0;
+        counters[6] <= 0;
+        counters[7] <= 0;
+        counters[8] <= 0;
+        counters[9] <= 0;
+        counters[10] <= 0;
+        counters[11] <= 0;
+        counters[12] <= 0;
+        counters[13] <= 0;
+        counters[14] <= 0;
+        counters[15] <= 0;
+    end
+end

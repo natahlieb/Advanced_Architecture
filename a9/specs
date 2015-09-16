@@ -1,0 +1,34 @@
+what have completed:
+fetching and dispatching
+move
+load
+add
+working on jumping - need to resolve error
+
+need to do ldr, jeq, have halt run until all registers are done being modified
+
+
+steps to completion:
+
+set up fetching to continue until instruction buffer is full
+move item from instruction buffer to dispatch unit
+
+
+fetch buffer - can hold 4 different instructions
+
+---------------------------
+register buffer: 3 entries
+busy, source, value
+
+
+
+----------------------------
+reservation stations
+8 entries
+
+busy, operation, ready 0, src 0, value 0, ready 1, src 1, value 1
+
+
+4 stations per instruction
+r_inst#
+busy denotes whether in use or not

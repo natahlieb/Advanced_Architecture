@@ -1,0 +1,55 @@
+Due date: Sunday 2/8/2015 @11:59pm
+
+Objective: Learn have to implement a multi-cycle design
+
+Assignment: 
+
+Expand on our processor from p1
+
+- Add the ld and halt instructions:
+
+    encoding              instruction             description
+    
+    0000iiiiiiiitttt      mov i,t                 regs[t] = i; pc += 1;
+    0001aaaabbbbtttt      add a,b,t               regs[t] = regs[a] + regs[b]; pc += 1;
+    0010jjjjjjjjjjjj      jmp j                   pc = j;
+    0011000000000000      halt                    <stop fetching instructions>
+    0100iiiiiiiitttt      ld i,t                  regs[t] = mem[i]; pc += 1;
+
+- We have a single-ported memory with a latency of
+  800ps (implemented in mem.v)
+
+- We have a register file with 2 read ports (600ps latency) and 1 write
+  port (implemented in regs.v)
+
+- We have a 1GHz clock (implemented in clock.v)
+
+
+Files you can change
+~~~~~~~~~~~~~~~~~~~~
+
+cpu.v contains the implementation. You are required to use the provided
+memory (mem.v), register file (regs.v), and clock (clock.v)
+
+Files to leave alone
+~~~~~~~~~~~~~~~~~~~~
+
+Makefile, clock.v, mem.v, regs.v, test.ok, mem.hex
+
+To compile
+~~~~~~~~~~
+
+    make
+
+To run
+~~~~~~
+
+    make run
+
+Will also produce cpu.vcd which can be viewed in gtkwave
+
+To test
+~~~~~~~
+
+    make test
+

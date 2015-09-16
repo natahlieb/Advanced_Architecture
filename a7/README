@@ -1,0 +1,72 @@
+Due date: Sunday 4/5/2015 @11:59pm
+
+Objective: Add a 4 word Cache
+
+Assignment: 
+~~~~~~~~~~~
+
+You're given an inefficient multi-cycle implementation of our CPU that uses
+asynchronous memory. Your job is to make it run faster by adding a cache.
+
+You're free to organize the cache in any way you like provided that its size
+doesn't exceed 4 words.
+
+My implementation is embarrassingly slow and you have plenty of room for
+improvement. You don't have to pipeline the implementation; a cache is all
+we're looking for.
+
+- instruction set
+
+  encoding          instruction   description
+    
+0  0000iiiiiiiitttt  mov i,t       regs[t] = i; pc += 1;
+1  0001aaaabbbbtttt  add a,b,t     regs[t] = regs[a] + regs[b]; pc += 1;
+2  0010jjjjjjjjjjjj  jmp j         pc = j;
+3  0011000000000000  halt          <stop fetching instructions>
+4  0100iiiiiiiitttt  ld i,t        regs[t] = mem[i]; pc += 1;
+5  0101aaaabbbbtttt  ldr a,b,t     regs[t] = mem[regs[a]+regs[b]]; pc += 1;
+6  0110aaaabbbbtttt  jeq a,b,t     if (regs[a] == regs[b]) pc += d
+                                  else pc += 1;
+
+
+To read from memory:
+
+    - set readEnalbe to 1
+    - set raddr to the desired address
+
+After a few cycles (n > 0)
+
+     - ready will be set to 1
+     - rdata will have the data
+
+Both "ready" and "rdata" are wires and you need to grab the values in
+that cycle or risk getting undefined behavior
+
+
+Files you can change
+~~~~~~~~~~~~~~~~~~~~
+
+cpu.v contains the implementation. You are required to use the provided
+memory (mem.v), register file (regs.v), and clock (clock.v)
+
+Files to leave alone
+~~~~~~~~~~~~~~~~~~~~
+
+Makefile, clock.v, mem.v, regs.v, counter.v, test.ok, mem.hex
+
+To compile
+~~~~~~~~~~
+
+    make
+
+To run all tests
+~~~~~~~~~~~~~~~~
+
+    make test
+
+To run one test (e.g. test1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    make test1
+
+Will also produce cpu.vcd which can be viewed in gtkwave

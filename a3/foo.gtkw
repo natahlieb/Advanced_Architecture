@@ -1,0 +1,49 @@
+[*]
+[*] GTKWave Analyzer v3.3.58 (w)1999-2014 BSI
+[*] Thu Apr 16 23:26:45 2015
+[*]
+[dumpfile] "/v/filer4b/v38q001/nmb642/Documents/spring2015/cs350c/a3/cpu.vcd"
+[dumpfile_mtime] "Thu Apr 16 23:26:13 2015"
+[dumpfile_size] 4743
+[savefile] "/v/filer4b/v38q001/nmb642/Documents/spring2015/cs350c/a3/foo.gtkw"
+[timestart] 38350
+[size] 1914 1086
+[pos] -1 -1
+*-11.000000 45000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 224
+[signals_width] 287
+[sst_expanded] 1
+[sst_vpaned_height] 312
+@28
+main.clk
+@22
+main.cycle[15:0]
+main.memIn[15:0]
+main.memOut[15:0]
+main.pc[15:0]
+main.inst[15:0]
+@25
+main.state[3:0]
+@200
+-
+-
+@22
+main.ra[3:0]
+main.rb[3:0]
+main.rt[3:0]
+main.res[15:0]
+@200
+-
+-
+@22
+main.\i_cache0[0][15:0]
+main.\i_cache0[1][15:0]
+main.\i_cache0[2][15:0]
+@200
+-
+@22
+main.\i_cache1[0][15:0]
+main.\i_cache1[1][15:0]
+main.\i_cache1[2][15:0]
+[pattern_trace] 1
+[pattern_trace] 0

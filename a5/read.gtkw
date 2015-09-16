@@ -1,0 +1,88 @@
+[*]
+[*] GTKWave Analyzer v3.3.58 (w)1999-2014 BSI
+[*] Mon Mar  9 01:46:13 2015
+[*]
+[dumpfile] "/home/natahlie/Documents/spring2015/cs350r/a6/cpu.vcd"
+[dumpfile_mtime] "Mon Mar  9 01:46:01 2015"
+[dumpfile_size] 466192
+[savefile] "/home/natahlie/Documents/spring2015/cs350r/a5/read.gtkw"
+[timestart] 0
+[size] 1920 1056
+[pos] -1 -1
+*-12.000000 10070 13000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 232
+[signals_width] 265
+[sst_expanded] 1
+[sst_vpaned_height] 487
+@28
+main.clk
+@24
+main.next_pc[15:0]
+main.f_pc[15:0]
+main.d_pc[15:0]
+main.r_pc[15:0]
+main.x_pc[15:0]
+main.l_pc[15:0]
+main.w_pc[15:0]
+@200
+-
+@22
+main.d_inst[15:0]
+main.r_inst[15:0]
+main.x_inst[15:0]
+main.l_inst[15:0]
+main.w_inst[15:0]
+@200
+-
+@28
+main.f_valid
+main.d_valid
+@29
+main.r_valid
+@28
+main.x_valid
+main.l_valid
+main.w_valid
+@200
+-
+-
+@28
+main.storing
+main.d_isJmp
+main.d_useSaved
+main.w_halt
+@200
+-
+-
+@28
+main.d_flush
+main.l_flush
+main.r_flush
+main.w_flush
+main.x_flush
+main.d_stall
+@200
+-
+@22
+main.mem_writeAddress[15:0]
+main.target[3:0]
+main.mem_writeData[15:0]
+main.w_output[15:0]
+@28
+main.mem_writeEnable
+main.write_enabled
+@22
+main.x_va[15:0]
+main.x_vb[15:0]
+main.ra_val[3:0]
+main.rb_val[3:0]
+@200
+-
+@28
+main.ren0
+main.ren1
+@22
+main.ra_val[3:0]
+main.rb_val[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
